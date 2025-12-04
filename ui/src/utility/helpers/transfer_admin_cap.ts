@@ -4,6 +4,7 @@ export const transferAdminCap = (adminCapId: string, to: string) => {
   const tx = new Transaction();
   
   // TODO: Transfer admin capability to another address
+  tx.transferObjects([tx.object(adminCapId)],to);
   // Use tx.transferObjects() method
   // Arguments: [objects array], recipient address
     // Hints:

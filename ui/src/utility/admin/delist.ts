@@ -8,6 +8,13 @@ export const delist = (
   const tx = new Transaction();
 
   // TODO: Add moveCall to delist a hero (Admin only)
+  tx.moveCall({
+    target:`${packageId}::marketplace::delist`,
+    arguments:[
+      tx.object(adminCapId),
+      tx.object(listHeroId),
+    ],
+  });
   // Function: `${packageId}::marketplace::delist`
   // Arguments: adminCapId (object), listHeroId (object)
     // Hints:

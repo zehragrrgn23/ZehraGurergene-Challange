@@ -4,6 +4,12 @@ export const createArena = (packageId: string, heroId: string) => {
   const tx = new Transaction();
   
   // TODO: Add moveCall to create a battle place
+  tx.moveCall({
+    target:`${packageId}::arena::create_arena`,
+    arguments:[
+      tx.object(heroId),
+    ],
+  });
   // Function: `${packageId}::arena::create_arena`
   // Arguments: heroId (object)
     // Hints:
